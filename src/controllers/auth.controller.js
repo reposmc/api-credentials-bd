@@ -2,8 +2,15 @@ const jwt = require("jsonwebtoken");
 //DotEnv
 const dotenv = require("dotenv");
 const env = dotenv.config();
-const libs = require("./../libs/functions");
+const libs = require("../libs/functions");
 
+/**
+ * Creates a new token for accessing to the APIS.
+ *
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 const createToken = (req, res) => {
   const token = req.headers["x-access-token"];
 
