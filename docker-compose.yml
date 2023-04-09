@@ -1,9 +1,26 @@
 version: "3.3"
 
+networks:
+  api-network:
+    external: true
+
 services:
   app:
-    build: .
+    image: node:18-alpine
+    command: npm start
+    container_name: credentials
+    restart: always
+    working_dir: /usr/app
     volumes:
       - ./:/usr/app
-    ports:
-      - "3000:3000"
+    expose: 
+      - 3000
+    networks:
+      - api-network
+
+  npm:
+    image: node:18-alpine
+    volumes:
+      - ./:/usr/app
+    working_dir: /usr/app
+    entrypoint: ["npm"]

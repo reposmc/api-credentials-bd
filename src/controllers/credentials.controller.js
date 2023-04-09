@@ -10,11 +10,11 @@ const server = require("fastify");
  * @returns
  */
 const getCredentials = async (req, res) => {
-  const token = req.headers["x-access-token"];
+  // const token = req.headers["x-access-token"];
 
-  if (!libs.verifyToken(token)) {
-    return res.status(401).send({ msg: "Token not provided or invalid." });
-  }
+  // if (!libs.verifyToken(token)) {
+  //   return res.status(401).send({ msg: "Token not provided or invalid." });
+  // }
 
   const credentials = await Credential.find(req.body);
 
@@ -32,12 +32,12 @@ const getCredentials = async (req, res) => {
  * @returns
  */
 const credentialsByFilter = async (req, res) => {
-  const token = req.headers["x-access-token"];
-  console.log(token);
+  // const token = req.headers["x-access-token"];
+  // console.log(token);
 
-  if (!libs.verifyToken(token)) {
-    return res.status(401).send({ msg: "Token not provided or invalid." });
-  }
+  // if (!libs.verifyToken(token)) {
+  //   return res.status(401).send({ msg: "Token not provided or invalid." });
+  // }
 
   const credentials = await Credential.find(req.body);
 
