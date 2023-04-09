@@ -1,6 +1,4 @@
 const Credential = require("../models/Credential");
-const libs = require("../libs/functions");
-const server = require("fastify");
 
 /**
  *  Gets all the credentials from the database.
